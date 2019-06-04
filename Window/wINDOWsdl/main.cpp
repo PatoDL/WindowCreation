@@ -1,6 +1,7 @@
 // Example program:
 // Using SDL2 to create an application window
 
+#include <GL/glew.h>
 #include "SDL.h"
 #include <stdio.h>
 
@@ -20,6 +21,8 @@ int main(int argc, char* argv[]) {
 		SDL_WINDOW_OPENGL                  // flags - see below
 	);
 
+	SDL_GLContext glcontext = SDL_GL_CreateContext(window);
+
 	// Check that the window was successfully created
 	if (window == NULL) {
 		// In the case that the window could not be made...
@@ -27,6 +30,14 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}
 
+	GLenum err = glewInit();
+
+	if (GLEW_OK != err)
+	{
+		/* Problem: glewInit failed, something is seriously wrong. */
+		fprintf(stderr, "Error: %s\n", glewGetErrorString(err));
+	}
+	fprintf(stdout, "Status: Using GLEW %s\n", glewGetString(GLEW_VERSION));
 	// The window is open: could enter program loop here (see SDL_PollEvent())
 
 	SDL_Delay(3000);
