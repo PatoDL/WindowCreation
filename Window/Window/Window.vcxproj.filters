@@ -18,5 +18,21 @@
     <ClCompile Include="main.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="loadShaders.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="loadShader.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="SimpleFragmentShader.fragmentshader.txt">
+      <Filter>Archivos de origen</Filter>
+    </Text>
+    <Text Include="SimpleVertexShader.vertexshader.txt">
+      <Filter>Archivos de origen</Filter>
+    </Text>
   </ItemGroup>
 </Project>

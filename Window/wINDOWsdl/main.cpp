@@ -40,7 +40,13 @@ int main(int argc, char* argv[]) {
 	fprintf(stdout, "Status: Using GLEW %s\n", glewGetString(GLEW_VERSION));
 	// The window is open: could enter program loop here (see SDL_PollEvent())
 
-	SDL_Delay(3000);
+	while (1) {
+		SDL_Event event;
+		while (SDL_PollEvent(&event)) {
+			/* handle your event here */
+		}
+		/* do some other stuff here -- draw your app, etc. */
+	}
 
 	  // Pause execution for 3000 milliseconds, for example
 
